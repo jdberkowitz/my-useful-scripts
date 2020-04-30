@@ -1,4 +1,4 @@
-function mtLinkFile(url) {
+function makeLinkFile(url) {
     var extention = url.replace(/^.+\.([^.]+)$/, '$1')
       , targetTag = document.getElementsByTagName('head')[0];
     if (extention == 'js') {
@@ -23,11 +23,11 @@ function mtLinkFile(url) {
 
 @Example 
 //Add a local file to the head
-mtLinkFile('/content/mycssfile.css');
-mtLinkFile('/content/mjssfile.js');
+makeLinkFile('/content/mycssfile.css');
+makeLinkFile('/content/mjssfile.js');
 
 @Example
 //Check if JQuery is loaded and if not load a cdn version
 if (typeof jQuery == 'undefined') {
-    mtLinkFile('https://code.jquery.com/jquery-3.3.1.min.js');
+    makeLinkFile('https://code.jquery.com/jquery-3.3.1.min.js');
 }
