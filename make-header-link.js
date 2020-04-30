@@ -21,4 +21,13 @@ function mtLinkFile(url) {
     }
 }
 
-//@Example mtLinkFile('/content/mycssfile.css');
+@Example 
+//Add a local file to the head
+mtLinkFile('/content/mycssfile.css');
+mtLinkFile('/content/mjssfile.js');
+
+@Example
+//Check if JQuery is loaded and if not load a cdn version
+if (typeof jQuery == 'undefined') {
+    mtLinkFile('https://code.jquery.com/jquery-3.3.1.min.js');
+}
