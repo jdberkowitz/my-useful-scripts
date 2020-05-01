@@ -31,3 +31,26 @@ makeLinkFile('/content/mjssfile.js');
 if (typeof jQuery == 'undefined') {
     makeLinkFile('https://code.jquery.com/jquery-3.3.1.min.js');
 }
+
+
+#########
+#Check for script and add IFFY
+     (function(){
+        var AllScripts = document.getElementsByTagName('script');
+        var ScriptLoaded = false;
+       //Check if the searchinse script loaded already  
+       //If it loaded set teh boolean to true 
+        for(var i in AllScripts){
+            if(AllScripts[i].src === 'Add_your_url'){
+              ScriptLoaded = true;         
+            }};
+          	console.log(ScriptLoaded);
+            //If the script is not already present create the script tag in the head.
+            if(ScriptLoaded == false){
+              var head= document.getElementsByTagName('head')[0];
+              var script= document.createElement('script');
+              script.type= 'text/javascript';
+              script.src= 'Add_your_url';
+              head.appendChild(script);          
+            };
+      }());
